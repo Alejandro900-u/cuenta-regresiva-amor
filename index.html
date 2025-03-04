@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva de Amor</title>
+    <script>
+        function updateCountdown() {
+            const startDate = new Date("March 5, 2025 00:00:00").getTime();
+            const targetDate = new Date("April 30, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+
+            if (now < startDate) {
+                document.getElementById("countdown").innerText = "La cuenta regresiva comenzará el 5 de marzo. 💖";
+            } else {
+                const diff = targetDate - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                document.getElementById("countdown").innerText = `Faltan ${days} días para su cumpleaños 💖`;
+            }
+        }
+
+        function showMessage() {
+            const messages = [
+                "¡Faltan solo 29 días para celebrar a la persona más increíble del mundo! Cada día que pasa, mi amor por ti crece más. 💖✨",
+                "Cada amanecer es una oportunidad para amarte más. No puedo esperar para verte brillar en tu día especial. 🌞❤️ ¡28 días!",
+                "Si cada beso fuera un día, te besaría eternamente... Pero por ahora, cuento los días hasta tu cumpleaños con amor y emoción. 💋💫 ¡27 días!",
+                "Solo quiero recordarte que eres la razón de mi felicidad y que en 26 días vamos a celebrar tu existencia con todo mi amor. ❤️🎉",
+                "Imagínate una estrella fugaz cada noche pidiendo un deseo… El mío siempre es el mismo: que seas la persona más feliz del universo. 🌟💫 ¡25 días!",
+                "No hace falta una fecha especial para decirte cuánto te amo, pero saber que tu cumpleaños se acerca me llena de emoción. 💕✨ ¡24 días!",
+                "Amo cada momento a tu lado, y contar los días para celebrar tu vida me hace sonreír como un niño. 😍🎂 ¡23 días!",
+                "Tu amor es mi mejor regalo diario, pero en 22 días el regalo será para ti. 🎁💖 Espero sorprenderte y hacerte sonreír tanto como tú me haces a mí.",
+                "Cada día que pasa, mi amor por ti se multiplica. En 21 días, será tu día especial, pero para mí, cada día contigo ya lo es. ❤️🌹",
+                "Tu risa es mi melodía favorita y tu amor, mi refugio. En 20 días, celebraremos la magia de tu existencia. 🎶💞",
+                "El mundo es más hermoso desde que existes. No puedo esperar para celebrar a la persona más maravillosa que conozco. 🥰🎉 ¡19 días!",
+                "Si pudiera contar cuánto te amo, faltaría el universo. En 18 días, haré todo lo posible para demostrarlo. 💫❤️",
+                "Eres mi lugar favorito en el mundo, y en 17 días celebraremos que el destino me regaló el amor más grande. 🌍💖",
+                "Tu amor ilumina mis días como el sol. 🌞 En 16 días, quiero llenarte de amor y alegría, como tú haces conmigo.",
+                "Cada día a tu lado es un regalo, pero en 15 días, el regalo serás tú. 🎁💝 Estoy ansioso por celebrar tu vida.",
+                "Mi amor por ti es infinito, como el tiempo que me gustaría pasar a tu lado. ⏳💓 ¡14 días para celebrar tu día!",
+                "El mundo brilla más cuando sonríes, y en 13 días haremos que tu sonrisa sea la más radiante. ✨😊",
+                "Eres la melodía más dulce de mi vida, y en 12 días haremos una sinfonía de amor para ti. 🎶❤️",
+                "Si cada latido de mi corazón representara mi amor por ti, ya habríamos contado millones. 💓⏳ ¡11 días para tu gran día!",
+                "Mi amor por ti crece con cada segundo que pasa. En 10 días, quiero que sientas cuánto significas para mí. 💕⏳",
+                "En 9 días, el mundo celebrará tu existencia, pero yo lo celebro cada día porque eres mi más grande amor. 🎉❤️",
+                "No hay palabras suficientes para describir cuánto te amo. En 8 días, espero hacerte sentir lo especial que eres. 🌎💖",
+                "Tu amor me llena de luz. En 7 días, toda esa luz será para ti, porque eres el centro de mi universo. ✨💛",
+                "El tiempo vuela cuando estoy contigo. En 6 días, volaremos juntos en un día lleno de amor y felicidad. 🕊️💖",
+                "Faltan solo 5 días y mi corazón late más rápido de emoción. ¡Será un día increíble para la persona más increíble! 💓🎊",
+                "Tú eres mi historia favorita, mi destino y mi futuro. En 4 días, haremos de tu cumpleaños un día inolvidable. 📖❤️",
+                "No hay estrella más brillante que tú. En 3 días, quiero verte brillar aún más con felicidad. 🌟💞",
+                "¡2 días! Mi amor, quiero que este cumpleaños sea el más especial, porque tú eres lo más especial para mí. 💘🎈",
+                "Mañana es tu gran día, pero quiero recordarte que para mí, cada día contigo es una celebración de amor. 🎊💖 ¡1 día!",
+                "¡FELIZ CUMPLEAÑOS, MI AMOR! 🎂🎉 No hay palabras suficientes para describir lo feliz que me hace tenerte en mi vida. Hoy es tu día, y haré todo lo posible para que sea inolvidable. ¡Te amo con todo mi corazón! ❤️🥰"
+            ];
+            const today = new Date().getDate() - 1;
+            if (today >= 0 && today < messages.length) {
+                document.getElementById("message").innerText = messages[today];
+            }
+        }
+
+        window.onload = function() {
+            updateCountdown();
+            showMessage();
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #d63384;
+            padding: 20px;
+        }
+        #container {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Cuenta Regresiva de Amor 💕</h1>
+        <h2 id="countdown"></h2>
+        <p id="message"></p>
+    </div>
+</body>
+</html>
